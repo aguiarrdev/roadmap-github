@@ -73,6 +73,8 @@ Alguns desses sistemas são:
 
 ### Interface GitHub
 
+Tour pela interface do GitHub.
+
 - Overview
 - Repositories
 - Projects
@@ -368,7 +370,21 @@ Se uma branch representa uma nova linha do tempo, um *[merge](https://git-scm.co
 
 ### Conflito?
 
+Quando estamos trabalhando com *merges* e *branchs*, é comum acabar gerando um conflito de git. Mas afinal, o que é um conflito de git?
+
+Um conflito, geralmente, acontece quando tentamos fazer um *merge* entre duas *branchs* diferentes, e em cada uma delas há uma alteração diferente em uma parte específica do código. Quando isso acontece, o git não sabe qual das alterações ele deve priorizar, ou até mesmo se deve manter as duas.
+
 ### Revertendo commits
+
+O comando *[revert](https://git-scm.com/docs/git-revert)* serve para reverter alterações já realizadas em uma branch.
+
+```bash
+## Revertendo último commit
+$ git revert HEAD
+
+## Revertendo commit específico com o hash do commit
+$ git revert eb27aacfdaedc8ffe0f6f829b909135304fcf732
+```
 
 ### Tagueamento
 
@@ -395,10 +411,3 @@ As *[tags](https://git-scm.com/docs/git-tag)* é uma forma de definir marcos e v
     ## Removendo uma tag do ambiente remoto
     $ git push -d origin v1.0.0
     ```
-    
-
-### Actions, Wiki & Issues
-
-- Actions
-- Wiki
-- Issues
