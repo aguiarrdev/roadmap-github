@@ -27,13 +27,13 @@ Um sistema de controle de versão, independente do tamanho da sua aplicação, �
 
 A ferramenta Git, sendo a maior do mercado, é requisito mínimo nas maiorias das vagas de T.I. E mesmo que nem todas as empresas utilizam o GitHub como como ferramenta principal, é sempre bom ter e manter o seu perfil bem atualizados com projetos pessoais e colaborações em projetos alheios.
 
-Todos sabemos que existem diversas vantagens de manter seus projetos em na nuvem, mas o Git não é só isso. O fato de ter todas as alterações feitas e a possibilidade de controlar e voltar em códigos de versões anteriores é um ótima funcionalidade e que salva os desenvolvedores diversas vezes, quando acabamos enviando algo errado por engano para o repositório principal.
+Todos sabemos que existem diversas vantagens de manter seus projetos em nuvem, mas o Git não é só isso. O fato de ter todas as alterações feitas e a possibilidade de controlar e voltar em códigos de versões anteriores é um ótima funcionalidade e que salva os desenvolvedores diversas vezes, quando acabamos enviando algo errado por engano para o repositório principal.
 
 Podendo também criar ramificações do projeto para trabalhar nele sem que atrapalhe os outros *devs* envolvidos no projeto também evita uma grande dor de cabeça.
 
-Isso sem contar que cada desenvolvedor tem sua própria versão do mesmo projeto em cada máquina, fazendo com que ele possa fazer tudo que pode fazer no repositório principal.
+Isso sem contar que cada desenvolvedor tem sua própria versão do mesmo projeto em sua máquina, fazendo com que ele possa fazer tudo que pode fazer no repositório principal.
 
-O Git não resolve absolutamente todos os nosso problemas, e com certeza não é a “solução perfeita”, mas com certeza é o **melhor que temos até agora**.
+O Git não resolve absolutamente todos os nosso problemas, e é certo que não é a “solução perfeita”, mas com certeza é o **melhor que temos até agora**.
 
 ### Exemplos e comparativos
 
@@ -109,75 +109,6 @@ Tour pela interface do GitHub.
     ```bash
     git remote add origin "https://github.com/username/repositorie"
     ```
-    
-
-### Gitignore & Readme
-
-Existem alguns arquivos de “configuração”, que servem ou para explorar uma funcionalidade do sistema de versionamento, ou até mesmo facilitar a documentação do próprio projeto.
-
-- .gitignore
-    
-    Quando estamos falando de projetos maiores, ou até mesmo pequenos projetos que utilizam dependências ou bibliotecas de terceiros, muitas vezes não precisamos subir todos os arquivos. O arquivo “*.gitignore*” serve para configurarmos os arquivos que queremos que sejam ignorados pelo git.
-    
-    Os arquivos presentes no *gitignore* não serão considerados pelo sistema de versionamento. 
-    
-    O arquivo aceita também expressões regulares e negações para não ignorar arquivos e pastas especificadas nele.
-    
-    ```bash
-    ## ignorando pastas inteiras
-    node_modules/
-    vendor/
-    
-    ## ignorando arquivos dentro de subpastas
-    app/pasta/arquivo.js
-    
-    ## ignorando arquivo na raiz do projeto
-    arquivo.php
-    
-    ## ignorando arquivos com expressões regulares
-    *.lock
-    
-    ## não ignorando pasta ou arquivo
-    !arquivo.php
-    !vendor/
-    ```
-    
-- readme.md
-    
-    O arquivo “*readme.md*” é um arquivo geralmente presente em repositórios com a finalidade de documentar ou informar algo sobre o projeto. Caso o projeto tenha esse arquivo, ele será mostrado na página inicial do seu repositório.
-    
-    O *readme* possui sua extensão “*.md*” e é escrito na linguagem de marcação chamada *[markdown](https://www.markdownguide.org/getting-started/)*, que lembra bastante o HTML.
-    
-- .keepme
-    
-    Já o arquivo “*.keepme*” não oficialmente reconhecido pelo Git, mas tem uma funcionalidade interessante e é bastante usado.
-    
-    Ele é, basicamente, um arquivo oculto sem extensão, e serve para que o git não ignore pastas vazias. Caso o usuário precise manter uma pasta, mesmo ela estando vazia, basta adicionar esse arquivo na pasta.
-    
-
-### Clonado repositórios
-
-- SSH
-    
-    O clone via SSH é feito através de uma configuração mais avançada, onde é utilizado o protocolo “*[Secure Shell](https://pt.wikipedia.org/wiki/Secure_Shell)*”, que é mais seguro e mais rápido que os demais protocolos.
-    
-    Para ser utilizado, o SSH exige uma configuração mais complexa e a geração de uma chave local e o cadastro dela no seu GitHub.
-    
-    Nesse método a autenticação é feita de forma automática, sem precisar inserir email, username, senha ou token pessoal.
-    
-- HTTPS
-    
-    O clone via HTTPS utiliza do protocolo padrão da Web e é basicamente a URL do repositório com “*.git*” no final.
-    
-    Antes a autenticação era feita com username e senha do usuário, mas no último ano foi definido que a autenticação só pode ser feita com o username e o personal token
-    
-    Para gerar o seu “*Personal Token*” acesse esse link: 
-    
-    [https://github.com/settings/tokens](https://github.com/settings/tokens)
-    
-- GitHub CLI
-    
-    No modo *[GitHub CLI](https://cli.github.com/)*, você pode fazer  o clone utilizando a CLI(Command Line Interface) disponibilizada pelo git.
     
 
 ### Add, reset e restore
@@ -411,3 +342,72 @@ As *[tags](https://git-scm.com/docs/git-tag)* é uma forma de definir marcos e v
     ## Removendo uma tag do ambiente remoto
     $ git push -d origin v1.0.0
     ```
+    
+
+### Gitignore & Readme
+
+Existem alguns arquivos de “configuração”, que servem ou para explorar uma funcionalidade do sistema de versionamento, ou até mesmo facilitar a documentação do próprio projeto.
+
+- .gitignore
+    
+    Quando estamos falando de projetos maiores, ou até mesmo pequenos projetos que utilizam dependências ou bibliotecas de terceiros, muitas vezes não precisamos subir todos os arquivos. O arquivo “*.gitignore*” serve para configurarmos os arquivos que queremos que sejam ignorados pelo git.
+    
+    Os arquivos presentes no *gitignore* não serão considerados pelo sistema de versionamento. 
+    
+    O arquivo aceita também expressões regulares e negações para não ignorar arquivos e pastas especificadas nele.
+    
+    ```bash
+    ## ignorando pastas inteiras
+    node_modules/
+    vendor/
+    
+    ## ignorando arquivos dentro de subpastas
+    app/pasta/arquivo.js
+    
+    ## ignorando arquivo na raiz do projeto
+    arquivo.php
+    
+    ## ignorando arquivos com expressões regulares
+    *.lock
+    
+    ## não ignorando pasta ou arquivo
+    !arquivo.php
+    !vendor/
+    ```
+    
+- readme.md
+    
+    O arquivo “*readme.md*” é um arquivo geralmente presente em repositórios com a finalidade de documentar ou informar algo sobre o projeto. Caso o projeto tenha esse arquivo, ele será mostrado na página inicial do seu repositório.
+    
+    O *readme* possui sua extensão “*.md*” e é escrito na linguagem de marcação chamada *[markdown](https://www.markdownguide.org/getting-started/)*, que lembra bastante o HTML.
+    
+- .gitkeep
+    
+    Já o arquivo “*.keepme*” não oficialmente reconhecido pelo Git, mas tem uma funcionalidade interessante e é bastante usado.
+    
+    Ele é, basicamente, um arquivo oculto sem extensão, e serve para que o git não ignore pastas vazias. Caso o usuário precise manter uma pasta, mesmo ela estando vazia, basta adicionar esse arquivo na pasta.
+    
+
+### Clonado repositórios
+
+- SSH
+    
+    O clone via SSH é feito através de uma configuração mais avançada, onde é utilizado o protocolo “*[Secure Shell](https://pt.wikipedia.org/wiki/Secure_Shell)*”, que é mais seguro e mais rápido que os demais protocolos.
+    
+    Para ser utilizado, o SSH exige uma configuração mais complexa e a geração de uma chave local e o cadastro dela no seu GitHub.
+    
+    Nesse método a autenticação é feita de forma automática, sem precisar inserir email, username, senha ou token pessoal.
+    
+- HTTPS
+    
+    O clone via HTTPS utiliza do protocolo padrão da Web e é basicamente a URL do repositório com “*.git*” no final.
+    
+    Antes a autenticação era feita com username e senha do usuário, mas no último ano foi definido que a autenticação só pode ser feita com o username e o personal token
+    
+    Para gerar o seu “*Personal Token*” acesse esse link: 
+    
+    [https://github.com/settings/tokens](https://github.com/settings/tokens)
+    
+- GitHub CLI
+    
+    No modo *[GitHub CLI](https://cli.github.com/)*, você pode fazer  o clone utilizando a CLI(Command Line Interface) disponibilizada pelo git.
